@@ -12,7 +12,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Driver {
 
 
-    // This class uses Singleton Design pattern which ensures that during the execution of any test, ther is going to be
+    // This class uses Singleton Design pattern which ensures that during the execution of any test, there is going to be
     // only a single browser open
     private static ThreadLocal<WebDriver> drivers =  new ThreadLocal<>();
 
