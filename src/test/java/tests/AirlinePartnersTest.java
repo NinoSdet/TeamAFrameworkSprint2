@@ -14,11 +14,13 @@ public class AirlinePartnersTest  extends TestBase {
         airlinePartnersPage.airlinePartners();
     }
 
+    @Test
     public void testAirlinePartnersDropDownMenu() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.clickAirPartnersDropDownMenu();
     }
 
+    @Test
     public void testAirFrance() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -27,6 +29,7 @@ public class AirlinePartnersTest  extends TestBase {
 
     }
 
+    @Test
     public void testAeroMexico() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -34,6 +37,7 @@ public class AirlinePartnersTest  extends TestBase {
         Assert.assertEquals(airlinePartnersPage.getAirPartnersDropDown().getText(), "AeroMexico");
     }
 
+    @Test
     public void testChinaEastern() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -42,6 +46,7 @@ public class AirlinePartnersTest  extends TestBase {
 
     }
 
+    @Test
     public void testKlm() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -50,6 +55,7 @@ public class AirlinePartnersTest  extends TestBase {
 
     }
 
+    @Test
     public void testKoreanAir() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -57,6 +63,7 @@ public class AirlinePartnersTest  extends TestBase {
         Assert.assertEquals(airlinePartnersPage.getAirPartnersDropDown().getText(), "Korean Air");
     }
 
+    @Test
     public void testLatam() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -65,6 +72,7 @@ public class AirlinePartnersTest  extends TestBase {
 
     }
 
+    @Test
     public void testVirginAtlantic() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
@@ -73,6 +81,7 @@ public class AirlinePartnersTest  extends TestBase {
 
     }
 
+    @Test
     public void testWestJet() {
         AirlinePartnersPage airlinePartnersPage = new AirlinePartnersPage();
         airlinePartnersPage.getAirPartnersDropDown().click();
