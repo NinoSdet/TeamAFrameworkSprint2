@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
+import utils.SeleniumUtils;
 
 public class FlightStatusPage {
     public FlightStatusPage() {
@@ -16,13 +17,13 @@ public class FlightStatusPage {
         flightStatusLink.click();
     }
 
-    @FindBy(className = "calDispValueCont icon-Calendar focusable-element")
+    @FindBy(id = "input_departureDate_1")
     private WebElement searchByDate;
     public void searchByDateClick(){
         searchByDate.click();
     }
 
-    @FindBy(className = "form-control mb-2 mb-sm-0 input-mobile-tab-class ng-pristine ng-valid ng-touched")
+    @FindBy(className = ".form-control.mb-2.mb-sm-0.input-mobile-tab-class.ng-pristine.ng-valid.ng-touched")
     private WebElement flightNumber;
     public void flightNumberClick(){
         flightNumber.click();

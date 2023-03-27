@@ -5,32 +5,52 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FlightStatusPage;
-import pages.SkyMilesPage;
 import utils.Driver;
+
+import static utils.SeleniumUtils.*;
 
 public class FlightStatusTests extends TestBase{
     @Test
     public void checkTitle() {
         String homePageTitle = "Delta Air Lines | Flights & Plane Tickets + Hotels & Rental Cars";
+        waitForTitleIs("Delta Air Lines | Flights & Plane Tickets + Hotels & Rental Cars", 3);
         Assert.assertEquals(Driver.getDriver().getTitle(), homePageTitle);
-        System.out.println("Page Title matches");
     }
 
     @Test
-    public void menuFSClick(){
+    public void fsClick(){
+        waitForClickablility(By.id("headPrimary4"), 3);
         FlightStatusPage FlightStatusPage = new FlightStatusPage();
         FlightStatusPage.flightStatusLinkClick();
-//        System.out.println("Button Pressed");
     }
 
-//    @Test
-//    public void checkMenu(){
-//        WebElement menuVerify = Driver.getDriver().findElement(By.name("viewFlightStatus"));
-//        Assert.assertEquals(menuVerify.getText(), "Flight Status", "The menu was not opened");
-//        System.out.println("Titles match");
-//    }
+    @Test
+    public void checkMenu(){
+        fsClick();
+        WebElement menuVerify = Driver.getDriver().findElement(By.cssSelector("#headPrimary4"));
+        elementExists(menuVerify, 3);
+    }
 
-   // @Test
+    private void searchByDateClick() {
+        FlightStatusPage FlightStatusPage = new FlightStatusPage();
+        FlightStatusPage.searchByDateClick();
+    }
+    @Test
+    public void checkSearchByDate(){
+        fsClick();
+        searchByDateClick();
+        WebElement calendarVerify = Driver.getDriver().findElement(By.xpath("//*[@id=\"primaryPanel4\"]/div/form/div/div[1]/date-selection-view/div/div/div/div/div[4]"));
+        elementExists(calendarVerify, 3);
+        WebElement currentDate = Driver.getDriver().findElement(By.xpath("//*[@id=\"primaryPanel4\"]/div/form/div/div[1]/date-selection-view/div/div/div/div/div[4]/div/div[2]/div[1]/div[2]/table/tbody/tr[6]/td[1]"));
+        WebElement oneDayBack = Driver.getDriver().findElement(By.xpath("//*parent preceding-sibling::td"));
+        oneDayBack.click();
+        System.out.println("One Day Back is Ok.");
+        oneDayBack.click();
+        System.out.println("Two Days Back went through.");
+
+    }
+
+
 
 
 }
